@@ -1,4 +1,9 @@
 package com.example.MedSchool.model;
+/**
+ * 
+ * @author Med Guennouni
+ *
+ */
 
 public enum Errors {
 	

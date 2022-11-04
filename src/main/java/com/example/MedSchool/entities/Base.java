@@ -1,5 +1,11 @@
 package com.example.MedSchool.entities;
+/**
+ * 
+ * @author Med Guennouni
+ *
+ */
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -7,11 +13,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @MappedSuperclass
-public abstract class Base {
+public abstract class Base implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "uuid2")
@@ -19,11 +30,14 @@ public abstract class Base {
 	private String id;
 
 	@Column(name = "creation_Date")
+	@Temporal(TemporalType.DATE)
 	private Date creationDate;
-
+	
+	@Temporal(TemporalType.DATE)
 	@Column(name = "modification_Date")
 	private Date modificationDate;
-
+	
+	//@Column(nullable = false)
 	private Boolean active;
 
 	public Base() {

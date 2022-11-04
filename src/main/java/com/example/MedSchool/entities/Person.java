@@ -1,31 +1,43 @@
 package com.example.MedSchool.entities;
+/**
+ * 
+ * @author Med Guennouni
+ *
+ */
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
 
 @MappedSuperclass
 public class Person extends Base {
 	
-	@Column(name="fisrt_name")
+	private static final long serialVersionUID = 1L;
+
+	@Column(name="first_name", nullable = false)
 	private String firstName;
 	
-	@Column(name="last_name")
+	@Column(name="last_name", nullable = false)
 	private String lastName;
 	
+	@Column(unique = true, nullable = false)
 	private String dni;
 	
-	@Column(name="birthday_date")
+	@Temporal(TemporalType.DATE)
+	@Column(name="birthday_date", nullable = false)
 	private Date birthdayDate;
 
 	public Person() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Person(String id, Date creationDate, Date modificationDate, Boolean active) {
 		super(id, creationDate, modificationDate, active);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Person(String firstName, String lastName, String dni, Date birthdayDate) {

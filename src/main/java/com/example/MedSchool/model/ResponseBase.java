@@ -1,4 +1,9 @@
 package com.example.MedSchool.model;
+/**
+ * 
+ * @author Med Guennouni
+ *
+ */
 
 public class ResponseBase {
 	
@@ -17,5 +22,22 @@ public class ResponseBase {
 		this.id = e.getId();
 		this.message = e.getMessage();
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
 
 }

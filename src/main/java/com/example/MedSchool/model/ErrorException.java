@@ -1,4 +1,9 @@
 package com.example.MedSchool.model;
+/**
+ * 
+ * @author Med Guennouni
+ *
+ */
 
 import org.springframework.http.HttpStatus;
 
